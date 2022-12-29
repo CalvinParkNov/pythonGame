@@ -32,14 +32,27 @@ ball.color("white")
 ball.penup()
 ball.goto(0, 0)
 
-# Function
+# paddle_a_up Function
 def paddle_a_up():
     # it returns the y coordinate
-    y = paddle_a.ycorn()
+    y = paddle_a.ycor()
     # add 20 to y pixel
     y += 20
     paddle_a.sety(y)
 
+# paddle_a_down Function
+def paddle_a_down():
+    y = paddle_a.ycor()
+    y-= 20
+    paddle_a.sety(y)
+
+# Keyboard binding
+wn.listen()
+# when the user press "w" then paddle goes up
+wn.onkeypress(paddle_a_up,"w")
+
+# when the user press "s" then paddle goes down
+wn.onkeypress(paddle_a_down, "s")
 
 # Main game loop
 while True:
