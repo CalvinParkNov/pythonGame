@@ -46,6 +46,18 @@ def paddle_a_down():
     y-= 20
     paddle_a.sety(y)
 
+# paddle_b_up Function
+def paddle_b_up():
+    y = paddle_b.ycor()
+    y += 20
+    paddle_b.sety(y)
+
+# paddle_b_down Function
+def paddle_b_down():
+    y = paddle_b.ycor()
+    y -= 20
+    paddle_b.sety(y)
+
 # Keyboard binding
 wn.listen()
 # when the user press "w" then paddle goes up
@@ -54,6 +66,11 @@ wn.onkeypress(paddle_a_up,"w")
 # when the user press "s" then paddle goes down
 wn.onkeypress(paddle_a_down, "s")
 
+# when the user press "Up" then paddle b goes up
+wn.onkeypress(paddle_b_up, "Up")
+
+# when the user press "Down" then paddle b goes up
+wn.onkeypress(paddle_b_down, "Down")
 # Main game loop
 while True:
     wn.update()
